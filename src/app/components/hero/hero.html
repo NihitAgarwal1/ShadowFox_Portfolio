@@ -1,0 +1,34 @@
+<section id="home" class="hero">
+  <div class="hero-shell">
+    <div class="hero-content">
+      <p class="hero-eyebrow">Hi, I'm</p>
+      <h1 class="hero-title">Nihit Agarwal</h1>
+      <p class="hero-typing-line">
+        and I'm <span class="hero-typed-text">{{ typedDescriptor() }}</span><span class="hero-cursor" aria-hidden="true"></span>
+      </p>
+      <p class="hero-subtitle">
+        Web Developer crafting responsive, user-focused experiences with clean design and modern web technologies.
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+      </div>
+      <div class="hero-highlights" aria-label="Portfolio highlights">
+        @for (highlight of highlights; track highlight.label) {
+          <div class="hero-highlight">
+            <span class="hero-highlight-value">{{ highlight.value }}</span>
+            <span class="hero-highlight-label">{{ highlight.label }}</span>
+          </div>
+        }
+      </div>
+    </div>
+
+    <div class="hero-gallery" aria-label="Profile photo slideshow">
+      <div class="hero-frame">
+        <img class="hero-photo hero-photo--first" src="/images/hero-photo-1.jpeg" alt="Nihit working on a laptop" />
+        <img class="hero-photo hero-photo--second" src="/images/hero-photo-2.jpeg" alt="Nihit standing at an Intel AI event" />
+        <img class="hero-photo hero-photo--third" src="/images/hero-photo-3.jpeg" alt="Nihit standing at Christ University Yeshwanthpur campus" />
+      </div>
+    </div>
+  </div>
+</section>

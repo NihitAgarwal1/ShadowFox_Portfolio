@@ -1,0 +1,198 @@
+.certifications {
+  padding: 4rem 2rem;
+  background: rgba(2, 9, 28, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+}
+
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.certifications-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(260px, 380px));
+  justify-content: center;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.certificate-item {
+  --card-progress: 0;
+  --hover-shift: 0px;
+  background-color: rgba(255, 255, 255, 0.06);
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: transform 0.18s linear, opacity 0.18s linear, border-color 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(16px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  opacity: calc(0.22 + (var(--card-progress) * 0.78));
+  transform: translateY(calc((1 - var(--card-progress)) * 44px + var(--hover-shift)))
+    scale(calc(0.9 + (var(--card-progress) * 0.1)));
+  box-shadow: 0 18px 40px rgba(0, 12, 38, calc(0.08 + (var(--card-progress) * 0.08)));
+  will-change: transform, opacity;
+}
+
+.certificate-item:hover {
+  --hover-shift: -3px;
+  border-color: #0066ff;
+  box-shadow: 0 5px 20px rgba(0, 102, 255, 0.1);
+}
+
+.certificate-preview {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 2.7;
+  background:
+    radial-gradient(circle at top, rgba(0, 102, 255, 0.18), transparent 55%),
+    rgba(255, 255, 255, 0.04);
+  overflow: hidden;
+}
+
+.certificate-content {
+  padding: 1.2rem 1.2rem 1.35rem;
+}
+
+.certificate-document-preview {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.5rem;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(233, 243, 255, 0.9)),
+    #fff;
+  color: #0b1b33;
+}
+
+.document-watermark {
+  color: #0066ff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.document-title {
+  margin-top: 0.8rem;
+  font-size: clamp(1.2rem, 1.8vw, 1.55rem);
+  line-height: 1.15;
+}
+
+.document-subtitle,
+.document-date {
+  margin-top: 0.65rem;
+  color: #355070;
+  font-size: 0.88rem;
+}
+
+.cert-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.cert-title {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  flex: 1;
+}
+
+.cert-date {
+  color: #0066ff;
+  font-size: 0.85rem;
+  font-weight: 500;
+  white-space: nowrap;
+  margin-left: 1rem;
+}
+
+.cert-issuer {
+  color: #b0b0b0;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.cert-link {
+  color: #0066ff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.cert-link:hover {
+  color: #0052cc;
+  transform: translateX(5px);
+}
+
+.pdf-overlay {
+  position: absolute;
+  inset: auto 1rem 1rem auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.55rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(2, 9, 28, 0.72);
+  color: #fff;
+  font-size: 0.85rem;
+  backdrop-filter: blur(10px);
+}
+
+.pdf-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.4rem;
+  height: 1.8rem;
+  padding: 0 0.55rem;
+  border-radius: 999px;
+  background: #0066ff;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.pdf-overlay-text {
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .certifications-list {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .cert-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .cert-date {
+    margin-left: 0;
+  }
+
+  .certificate-item {
+    transform: translateY(calc((1 - var(--card-progress)) * 32px + var(--hover-shift)))
+      scale(calc(0.93 + (var(--card-progress) * 0.07)));
+  }
+}

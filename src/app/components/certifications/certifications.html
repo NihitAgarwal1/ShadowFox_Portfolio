@@ -1,0 +1,48 @@
+<section id="certifications" class="certifications">
+  <div class="container">
+    <h2 class="section-title">Certifications</h2>
+    <div class="certifications-list">
+      @for (cert of certifications; track cert.id; let index = $index) {
+        <article #certificateCard class="certificate-item" [style.--card-progress]="cardReveal(index)">
+          <a
+            [href]="cert.credentialUrl"
+            class="certificate-preview"
+            target="_blank"
+            rel="noopener noreferrer"
+            [attr.aria-label]="'Open ' + cert.title + ' credential'"
+          >
+            @if (cert.previewType === 'pdf') {
+              <div class="certificate-document-preview" aria-label="PDF certificate preview">
+                <span class="document-watermark">Infosys Springboard</span>
+                <strong class="document-title">{{ cert.title }}</strong>
+                <span class="document-subtitle">{{ cert.issuer }}</span>
+                <span class="document-date">{{ cert.date }}</span>
+              </div>
+              <div class="pdf-overlay" aria-hidden="true">
+                <span class="pdf-badge">PDF</span>
+                <span class="pdf-overlay-text">Open certificate</span>
+              </div>
+            }
+          </a>
+
+          <div class="certificate-content">
+            <div class="cert-header">
+              <h3 class="cert-title">{{ cert.title }}</h3>
+              <span class="cert-date">{{ cert.date }}</span>
+            </div>
+            <p class="cert-issuer">{{ cert.issuer }}</p>
+            <a
+              [href]="cert.credentialUrl"
+              class="cert-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View credential"
+            >
+              View Credential ->
+            </a>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

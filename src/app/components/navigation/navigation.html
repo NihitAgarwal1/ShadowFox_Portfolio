@@ -1,0 +1,23 @@
+<nav class="navbar" [class.navbar-hidden]="isNavHidden()">
+  <div class="nav-container">
+    <a href="#home" class="navbar-brand" aria-label="Portfolio Home">
+      <span class="brand-text">Nihit's Profile</span>
+    </a>
+    <button
+      class="menu-toggle"
+      (click)="toggleMobileMenu()"
+      [attr.aria-expanded]="mobileMenuOpen()"
+      aria-controls="nav-menu"
+      aria-label="Toggle navigation menu"
+    >
+      <span class="hamburger"></span>
+    </button>
+    <div class="nav-menu" [class.active]="mobileMenuOpen()" id="nav-menu">
+      @for (link of navLinks; track link.href) {
+        <a [href]="link.href" class="nav-link" (click)="closeMobileMenu()" (keydown.enter)="closeMobileMenu()">
+          {{ link.label }}
+        </a>
+      }
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,38 @@
+<section id="about" class="about">
+  <div class="container">
+    <h2 class="section-title">About Me</h2>
+    <div class="about-content">
+      <div class="about-main">
+        <div class="about-text">
+          <p>
+            I'm a passionate full stack developer focused on building practical and efficient web
+            applications. I primarily work with Angular for frontend development and Java for
+            backend systems.
+          </p>
+          <p>
+            With a strong foundation in core web technologies, I focus on writing clean,
+            maintainable, and functional code. I enjoy turning ideas into real-world projects and
+            continuously improving my development skills. I have hands-on experience building
+            full-stack applications, including a hospital management system, and I'm actively
+            expanding my knowledge in backend development and APIs.
+          </p>
+        </div>
+      </div>
+
+      <div class="about-highlights">
+        <div #highlightCard class="highlight" [style.--highlight-progress]="highlightReveal(0)">
+          <h3>Frontend</h3>
+          <p>Angular, HTML5, CSS3, JavaScript, Responsive Design</p>
+        </div>
+        <div #highlightCard class="highlight" [style.--highlight-progress]="highlightReveal(1)">
+          <h3>Backend</h3>
+          <p>Java, MySQL, REST API Development</p>
+        </div>
+        <div #highlightCard class="highlight" [style.--highlight-progress]="highlightReveal(2)">
+          <h3>Tools</h3>
+          <p>GitHub, VS Code, Canva</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

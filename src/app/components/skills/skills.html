@@ -1,0 +1,23 @@
+<section id="skills" class="skills">
+  <div class="container">
+    <h2 class="section-title">Core Skills (Primary Focus)</h2>
+    <div class="skills-grid">
+      @for (skillGroup of skills; track skillGroup.category; let index = $index) {
+        <article #skillCard class="skill-group" [style.--card-progress]="cardReveal(index)">
+          <div class="skill-group-header">
+            <h3 class="skill-category">{{ skillGroup.category }}</h3>
+            <span class="skill-badge">Focus</span>
+          </div>
+          @if (skillGroup.note) {
+            <p class="skill-note">{{ skillGroup.note }}</p>
+          }
+          <div class="skill-items">
+            @for (skill of skillGroup.items; track skill) {
+              <span class="skill-item">{{ skill }}</span>
+            }
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
