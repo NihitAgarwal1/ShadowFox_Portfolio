@@ -4,7 +4,7 @@ A modern personal portfolio built with Angular, showcasing projects, skills, and
 
 ## Demo
 
-Live demo: portfolio-eight-xi-mg9b1ha4wl.vercel.app
+Live demo: nihitagarwal.vercel.app
 
 ## Features
 
